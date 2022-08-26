@@ -2,3 +2,6 @@
 <p><strong>Title: <%= @article.title%></strong></p>
 <p><strong>Description: <%= @article.description %></strong></p>
 <p><strong>Created at: <%= @article.created_at %></strong></p>
+<%=link_to 'Edit',edit_article_path(@article)%> |  <!-- works also without specifying @article-->
+<%=link_to 'Delete',article_path(@article), method: :delete, data: {confirm: "Are you sure to delete?"}%> |
+<%=link_to 'Back to list',articles_path%>
