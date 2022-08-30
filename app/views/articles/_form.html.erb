@@ -1,14 +1,7 @@
 <div class="container">
-    <% if @article.errors.any? %>
-    <h2>Error</h2>
-        <ul>
-            <% @article.errors.full_messages.each do |msg|%>
-                <li><%=msg%></li>
-            <%end%>
-        </ul> 
-    <%end%>
     <div class="row justify-content-center">
         <div class="col-10">
+        <%= render 'shared/errors' %>
         <%=link_to '[Back ttrtrtree]', articles_path, class:"text-info" %>    
             <%= form_with(model: @article, class: "shadow p-3 mb-5 bg-info rounded", local: true)  do |f| %>
             <div class="form-group row">    
